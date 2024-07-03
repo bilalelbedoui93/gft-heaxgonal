@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: Swagger Comercioelectronico - OpenAPI 3.0
+  description: this is a sample based on the OpenAPI 3.0 specification
+  contact:
+    email: bilalelbedoui93@gmail.com
+  version: 1.0.0
+servers:
+  - url: '{server}'
+    description: Localhost server
+tags:
+  - name: ConsultationProductPrice
+    description: Operation with 'prices' endpoint
+paths:
+  /prices:
+    get:
+      tags:
+        - ConsultationProductPrice
+      summary: Get price
+      description: 'Fetch the price that has to be applied to a product that belongs to a specific brand during a concrete date'
+      operationId: getProductPrice
+      parameters:
+        - name: dateApplyingPriceString
+          in: query
+          description: 'Date to check the price has to be applied'
+          required: true
+          schema:
+            type: string
+        - name: productId
+          in: query
+          description: 'Product ID we want to verify the price'
+          required: true
+          schema:
+            type: integer
+        - name: brandId
+          in: query
+          description: 'Brand Id to which the product belongs'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceToApplyResponse'
+        '400':
+          description: Parameters provided are not valid or null
+        '404':
+          description: Price not found
+components:
+  schemas:
+    PriceToApplyResponse:
+      type: object
+      properties:
+        productId:
+          type: integer
+        brandId:
+          type: integer
+        startDate:
+          type: date
+        endDate:
+          type: date
+        price:
+          type: double
