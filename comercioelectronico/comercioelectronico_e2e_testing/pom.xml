@@ -7,7 +7,7 @@
 	<parent>
 		<artifactId>comercioelectronico</artifactId>
 		<groupId>com.gft.inditex</groupId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 
 	<artifactId>comercioelectronico_e2e_testing</artifactId>

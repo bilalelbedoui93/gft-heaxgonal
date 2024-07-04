@@ -65,40 +65,4 @@ public class ConsultationProductPriceController implements PricesApi{
 		
 	}
 
-
-	
-	/*@GetMapping
-	ResponseEntity<PriceToApplyResponse> getPrice(@RequestParam(value = "dateApplyingPrice", required = true) String dateApplyingPriceString,
-												@RequestParam(value = "productId",  required = true) Integer productId,
-												@RequestParam(value = "brandId",  required = true) Integer brandId){		
-
-		try {
-	
-			CriteriaProductPriceQuery criteria = new CriteriaProductPriceQuery(
-					new DateVO(dateApplyingPriceString, DateVO.DATE_STRING_FORMAT),
-					new ProductIdVO(productId),
-					new BrandIdVO(brandId));
-			
-			Price price = useCase.retrieveProductPrice(criteria);
-			
-			PriceToApplyResponse response = new PriceToApplyResponse(
-					price.getProductId().getId(),
-					price.getBrandId().getId(),
-					price.getStartDate().getDate(),
-					price.getEndDate().getDate(),
-					price.getPrice());
-			
-			return new ResponseEntity<PriceToApplyResponse>(response, HttpStatus.OK);
-		
-		
-		}catch(IncorrectParametersDomainException e) {
-	       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
-		}catch (PriceNotFoundDomainException e) {
-	       throw new ResponseStatusException(HttpStatus.NO_CONTENT, e.getMessage(), e);
-		}
-	}*/
-
-	
-		
-	
 }

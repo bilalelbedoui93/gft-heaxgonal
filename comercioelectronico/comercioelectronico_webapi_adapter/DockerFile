@@ -1,0 +1,4 @@
+FROM openjdk:21
+EXPOSE 8082
+ADD target/comercio_electronico_docker_1.0.0.jar comercio_electronico_docker_1.0.0.jar
+ENTRYPOINT ["java","-jar","./comercio_electronico_docker_1.0.0.jar"]
