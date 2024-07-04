@@ -60,7 +60,7 @@ public class ConsultationProductPriceController implements PricesApi{
 		}catch(IncorrectParametersDomainException e) {
 	       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
 		}catch (PriceNotFoundDomainException e) {
-	       throw new ResponseStatusException(HttpStatus.NO_CONTENT, e.getMessage(), e);
+	       throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
 		}
 		
 	}
