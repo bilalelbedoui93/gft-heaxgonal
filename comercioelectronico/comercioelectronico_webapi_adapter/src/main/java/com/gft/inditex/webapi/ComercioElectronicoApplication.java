@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"com.gft.inditex.domain","com.gft.inditex.persistencesql"})
 @EnableJpaRepositories({"com.gft.inditex.persistencesql.repository"})
 @EntityScan("com.gft.inditex.persistencesql.entity")
-
 public class ComercioElectronicoApplication {
 
 	public static void main(String[] args) {

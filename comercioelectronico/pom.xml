@@ -1,55 +1,135 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  
-	<parent>
+    
+	
+	<parent>		
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.0</version>
 	</parent>
-	
+  	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gft.inditex</groupId>
 	<artifactId>comercioelectronico</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	
 	<description>Proyecto prueba tecnica gft usando arquitectura hexagonal</description>
-   
+	
 	<properties>
 		<java.version>21</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 	</properties>
-
+	
 	<modules>
-		<module>comercioelectronico_domain</module>            
+		<module>comercioelectronico_domain</module>
 		<module>comercioelectronico_webapi_adapter</module>
 		<module>comercioelectronico_persistencesql_adapter</module>
+		<module>comercioelectronico_apifirst_specification</module>
+		<module>comercioelectronico_e2e_testing</module>
 	</modules>
-
+  	
 	<dependencyManagement>
 		<dependencies>
-       	    
-       	    <dependency>
-	    		<groupId>com.gft.inditex</groupId>
-	    		<artifactId>comercioelectronico_domain</artifactId>
-	    		<version>${project.version}</version>
-	    	</dependency>
-       	    
-       	    <dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.11</version>
+			<dependency>
+				<groupId>com.gft.inditex</groupId>
+				<artifactId>comercioelectronico_domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.gft.inditex</groupId>
+				<artifactId>comercioelectronico_apifirst_specification</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.gft.inditex</groupId>
+				<artifactId>comercioelectronico_persistencesql_adapter</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+				
+			<!-- 
+			<dependency>
+				<groupId>org.antlr</groupId>
+				<artifactId>antlr4-runtime</artifactId>
+				<version>4.10.1</version>
+				<scope>runtime</scope>
+			</dependency>
+			-->
+			
+			<!-- Testing -->
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>5.10.2</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>5.11.0</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-junit-jupiter</artifactId>
+				<version>5.11.0</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.intuit.karate</groupId>
+				<artifactId>karate-junit5</artifactId>
+				<version>1.4.1</version>
 				<scope>test</scope>
 			</dependency>
 
+			
+			<!-- Open API -->
+			<dependency>
+				<groupId>org.openapitools</groupId>
+				<artifactId>jackson-databind-nullable</artifactId>
+				<version>0.2.6</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>1.7.0</version>
+			</dependency>
+			
+			<!-- {server}/swagger-ui
+			-->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>2.0.1.Final</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>javax.annotation-api</artifactId>
+				<version>1.3.2</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-  
+	
 	<build>
 		<pluginManagement>
+		
 			<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
 			<plugins>
 				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -62,22 +142,27 @@
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>3.0.2</version>
 				</plugin>
+				
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.0</version>
 				</plugin>
+				
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.22.1</version>
 				</plugin>
+				
 				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.0.2</version>
 				</plugin>
+				
 				<plugin>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.5.2</version>
 				</plugin>
+				
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.8.2</version>
@@ -87,12 +172,58 @@
 					<artifactId>maven-site-plugin</artifactId>
 					<version>3.7.1</version>
 				</plugin>
+				
 				<plugin>
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
+				
+				<plugin>
+					<groupId>org.openapitools</groupId>
+					<artifactId>openapi-generator-maven-plugin</artifactId>
+					<version>7.1.0</version>
+					<executions>
+						<execution>
+							<id>generate-api-code</id>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+							<configuration>
+								<inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
+								<generateSupportingFiles>false</generateSupportingFiles>
+								<generatorName>spring</generatorName>
+								<apiPackage>com.gft.inditex.webapi.generated</apiPackage>
+								<generateApiTests>false</generateApiTests>
+								<generateModelTests>false</generateModelTests>
+								<configOptions>
+									<interfaceOnly>true</interfaceOnly>
+									<delegatePattern>true</delegatePattern>
+				                    <java21>true</java21>
+				                    <skipDefaultInterface>true</skipDefaultInterface>
+				                    <apiPackage>com.gft.inditex.webapi.generated.api</apiPackage>
+				                    <modelPackage>com.gft.inditex.webapi.generated.model</modelPackage>
+								</configOptions>
+
+								<typeMappings>
+									<typeMapping>date=LocalDateTime</typeMapping>
+								</typeMappings>
+								
+								<importMappings>
+									<importMapping>LocalDateTime=java.time.LocalDateTime</importMapping>
+								</importMappings>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+  	
+
 </project>
