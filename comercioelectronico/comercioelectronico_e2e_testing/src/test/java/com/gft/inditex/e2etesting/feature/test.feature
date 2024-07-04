@@ -1,5 +1,7 @@
 Feature: Working with Price API
 
+	Background:
+
 	Scenario: Retrieve the correct price, when a unique price is available in the BDD for a requested Date
 		Given url 'http://localhost:8082/api/v1/prices?dateApplyingPriceString=2020-06-14-14:00:00&productId=35455&brandId=1'
 		When method GET

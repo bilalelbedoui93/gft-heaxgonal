@@ -8,6 +8,6 @@ public class KarateUnitTest {
 	
 	@Karate.Test
 	Karate executeEnd2EndTests_forComercioElectronicoAPI() {
-		return Karate.run(PATH_FEATURES).relativeTo(getClass());
+		return Karate.run(PATH_FEATURES);
 	}
 }
