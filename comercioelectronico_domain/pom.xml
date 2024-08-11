@@ -5,7 +5,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gft.inditex</groupId>
-	<artifactId>comercioelectronico_domain</artifactId>
+	<artifactId>comercioelectronico</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 	
