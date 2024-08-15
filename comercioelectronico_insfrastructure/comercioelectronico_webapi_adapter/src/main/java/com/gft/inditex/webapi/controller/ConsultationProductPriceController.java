@@ -38,7 +38,7 @@ public class ConsultationProductPriceController implements PricesApi{
 			@NotNull @Valid String dateApplyingPriceString, @NotNull @Valid Integer productId,
 			@NotNull @Valid Integer brandId) {
 		
-		try {
+		//try {
 			
 			CriteriaProductPriceQuery criteria = new CriteriaProductPriceQuery(
 					new DateVO(dateApplyingPriceString, DateVO.DATE_STRING_FORMAT),
@@ -55,14 +55,7 @@ public class ConsultationProductPriceController implements PricesApi{
 			response.setPrice(price.getPrice());
 			
 			return new ResponseEntity<PriceToApplyResponse>(response, HttpStatus.OK);
-		
-		
-		}catch(IncorrectParametersDomainException e) {
-	       throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage(), e);
-		}catch (PriceNotFoundDomainException e) {
-	       throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
-		}
-		
+
 	}
 
 }

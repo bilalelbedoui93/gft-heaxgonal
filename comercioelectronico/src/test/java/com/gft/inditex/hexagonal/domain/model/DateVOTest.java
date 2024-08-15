@@ -1,6 +1,8 @@
 package com.gft.inditex.hexagonal.domain.model;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.LocalDateTime;
 
@@ -8,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import com.gft.inditex.hexagonal.domain.exception.NotValidLocalDateTimeException;
 import com.gft.inditex.hexagonal.domain.exception.ValueObjectIsNullException;
-import com.gft.inditex.hexagonal.domain.model.DateVO;
 
 class DateVOTest {
 
