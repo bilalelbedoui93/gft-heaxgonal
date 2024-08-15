@@ -19,6 +19,7 @@ public class ComercioElectronicoApplication {
 		
 	    SpringApplication comercioElectronico = new SpringApplication(ComercioElectronicoApplication.class);	    
 	    comercioElectronico.run(args);
+	    
 	}
 	
 }

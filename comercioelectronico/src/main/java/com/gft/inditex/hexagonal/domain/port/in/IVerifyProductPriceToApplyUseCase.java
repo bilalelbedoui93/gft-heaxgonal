@@ -8,10 +8,10 @@ public interface IVerifyProductPriceToApplyUseCase {
 
 	/**
 	 * 
-	 * @param quey
+	 * @param query
 	 * @return
 	 * @throws PriceNotFoundDomainException
 	 */
-	Price retrieveProductPrice(CriteriaProductPriceQuery quey) throws PriceNotFoundDomainException;
+	Price retrieveProductPrice(CriteriaProductPriceQuery query) throws PriceNotFoundDomainException;
 	
 }

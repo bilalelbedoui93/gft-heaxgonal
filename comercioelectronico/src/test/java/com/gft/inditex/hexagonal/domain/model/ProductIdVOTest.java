@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import com.gft.inditex.hexagonal.domain.exception.ValueObjectIsNullException;
-import com.gft.inditex.hexagonal.domain.model.ProductIdVO;
 
 class ProductIdVOTest {
 

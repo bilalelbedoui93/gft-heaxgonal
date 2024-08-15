@@ -1,7 +1,5 @@
 package com.gft.inditex.hexagonal.domain.model;
 
-import java.time.LocalDateTime;
-
 public class Price implements Comparable<Price>{
 
 	private BrandIdVO brandId;

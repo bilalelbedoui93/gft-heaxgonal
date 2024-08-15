@@ -16,7 +16,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.gft.inditex.hexagonal.application.service.VerifyProductPriceToApplyService;
 import com.gft.inditex.hexagonal.domain.exception.PriceNotFoundDomainException;
 import com.gft.inditex.hexagonal.domain.model.BrandIdVO;
 import com.gft.inditex.hexagonal.domain.model.DateVO;
