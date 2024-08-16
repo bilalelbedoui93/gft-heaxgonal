@@ -7,11 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.gft.inditex.hexagonal.domain.configuration.WebAdapter;
-import com.gft.inditex.hexagonal.domain.exception.IncorrectParametersDomainException;
-import com.gft.inditex.hexagonal.domain.exception.PriceNotFoundDomainException;
 import com.gft.inditex.hexagonal.domain.model.BrandIdVO;
 import com.gft.inditex.hexagonal.domain.model.DateVO;
 import com.gft.inditex.hexagonal.domain.model.Price;
@@ -37,9 +34,7 @@ public class ConsultationProductPriceController implements PricesApi{
 	public ResponseEntity<PriceToApplyResponse> _getProductPrice(
 			@NotNull @Valid String dateApplyingPriceString, @NotNull @Valid Integer productId,
 			@NotNull @Valid Integer brandId) {
-		
-		//try {
-			
+					
 			CriteriaProductPriceQuery criteria = new CriteriaProductPriceQuery(
 					new DateVO(dateApplyingPriceString, DateVO.DATE_STRING_FORMAT),
 					new ProductIdVO(productId),
