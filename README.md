@@ -21,9 +21,11 @@
 ### Configuracion de los proyectos: comercioelectronico (Núcleo, contiene nuestro y la implementacion de la lógica de negocio) y comercioelectronico_insfrastructure (contiene los adapters web, persitencia, y e2e tests)
 
 - Configurar el jdk en nuestro workspace de ecplise
+
 ![Project Logo](static/002_config_jdk_eclipse.jpg)
 
 - Configurar maven, al igual que los parámetros de usuario(configuracion del setting.xml,       repositorio local)
+
   ![Project Logo](static/003_config_mvn.JPG)
   ![Project Logo](static/004_config_mvn_usersettings.JPG)
 
@@ -32,9 +34,11 @@
   ![Project Logo](static/005_import_domain.JPG)
 
 - Configurar el BUILD (clean install) de nuestra libreria
+
   ![Project Logo](static/006_config_build_domain.JPG)
 
 - Aquí abajo, podemos apreciar el resultado del build
+
   ![Project Logo](static/0061_clean_install_domain.JPG)
 
 - Ahora que  ya tenemos al dominio funcional, configuramos el proyecto con la infraestructura, que contiene los adaptadores web, persistencia...
@@ -42,21 +46,26 @@
   ![Project Logo](static/007_import_project_infraestructure.JPG)
 
 - Configurar el BUILD del proyecto infra también
+
   ![Project Logo](static/008_config_build_project_infra.JPG)
 
 - Este deberia ser el resultado  que deberíamos obtener una vez configurado el proyecto el local
+
   ![Project Logo](static/009_resultado_Build_infra.JPG)
 
 - Ejecutar el proyecto!! Siendo una api springboot, ya lleva incorporado las libreria de tomcat. Simplemente ejecutamos el MAIN como cualquier proyecto java.
 
-Se ejecutará sobre el puerto 8082 
+Se ejecutará sobre el puerto 8082.
+
   ![Project Logo](static/010-ejecutar_api.JPG)
 
 - Una vez el proyecto en ejecución. Lanzar los tests end-to-end des del modulo de testing.
   EJECUTAR LA CLASE KarateUniTest con JUNIT, rehabilitando la clase test comentando la annotación @Disabled.
   En la captura, podemos ver que karate tambien nos permite consultar el informe de los test en el navegador gracias al enlace que vemos.
+
   ![Project Logo](static/011_tests_karate_corriendo.JPG)
 
 - Para acceder a la BDD en memoria {url_server:puerto}/h2_console
   la configuración de acceso la entraréis el application.properties
+  
   ![Project Logo](static/012_BDD_en_memoria.JPG)
