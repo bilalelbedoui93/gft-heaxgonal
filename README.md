@@ -34,7 +34,7 @@
 - Configurar el BUILD (clean install) de nuestra libreria
   ![Project Logo](static/006_config_build_domain.JPG)
 
--Aquí abajo, podemos apreciar el resultado del build
+- Aquí abajo, podemos apreciar el resultado del build
   ![Project Logo](static/0061_clean_install_domain.JPG)
 
 - Ahora que  ya tenemos al dominio funcional, configuramos el proyecto con la infraestructura, que contiene los adaptadores web, persistencia...
