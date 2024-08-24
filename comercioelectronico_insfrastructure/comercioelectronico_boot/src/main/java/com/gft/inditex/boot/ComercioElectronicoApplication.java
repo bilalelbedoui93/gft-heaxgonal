@@ -1,4 +1,4 @@
-package com.gft.inditex.webapi.boot;
+package com.gft.inditex.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -30,6 +30,7 @@
 		<module>comercioelectronico_persistencesql_adapter</module>
 		<module>comercioelectronico_apifirst_specification</module>
 		<module>comercioelectronico_e2e_testing</module>
+        <module>comercioelectronico_boot</module>
 	</modules>
   	
 	<dependencyManagement>
@@ -38,6 +39,12 @@
 				<groupId>com.gft.inditex</groupId>
 				<artifactId>comercioelectronico</artifactId>
 				<version>1.0.0</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.gft.inditex</groupId>
+				<artifactId>comercioelectronico_webapi_adapter</artifactId>
+				<version>${project.version}</version>
 			</dependency>
 			
 			<dependency>
