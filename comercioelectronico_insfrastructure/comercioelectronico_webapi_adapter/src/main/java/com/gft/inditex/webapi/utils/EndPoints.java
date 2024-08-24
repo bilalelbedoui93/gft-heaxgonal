@@ -1,4 +1,4 @@
-package com.gft.inditex.webapi.configuration;
+package com.gft.inditex.webapi.utils;
 
 public class EndPoints {
 
