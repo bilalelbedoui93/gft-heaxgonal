@@ -53,9 +53,9 @@
 
   ![Project Logo](static/009_resultado_Build_infra.JPG)
 
-- Ejecutar el proyecto!! Siendo una api springboot, ya lleva incorporado las libreria de tomcat. Simplemente ejecutamos el MAIN como cualquier proyecto java.
+- Ejecutar el proyecto!! La clase starter para lanzar la applicación, la tenemos aislada en un módulo aparte "comercioelectronico_boot".
 
-Se ejecutará sobre el puerto 8082.
+  Simplemente ejecutamos el main al igual que cualquier applicación java, y lanzará sobre el puerto 8082.
 
   ![Project Logo](static/010-ejecutar_api.JPG)
 
