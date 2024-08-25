@@ -1,7 +1,7 @@
 package com.gft.inditex.hexagonal.domain.port.out;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 
 import com.gft.inditex.hexagonal.domain.model.Price;
 
@@ -15,6 +15,6 @@ public interface IRetrievePricesPort {
 	 * @param brandId
 	 * @return the price
 	 */
-	List<Price> getListPrices(LocalDateTime dateApplyingPrice, Integer productId, Integer brandId);
+	Optional<Price> getPrice(LocalDateTime dateApplyingPrice, Integer productId, Integer brandId);
 
 }

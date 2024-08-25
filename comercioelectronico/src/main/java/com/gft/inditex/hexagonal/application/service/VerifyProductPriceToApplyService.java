@@ -1,7 +1,6 @@
 package com.gft.inditex.hexagonal.application.service;
 
-import java.util.Comparator;
-import java.util.List;
+import java.util.Optional;
 
 import com.gft.inditex.hexagonal.domain.configuration.UseCase;
 import com.gft.inditex.hexagonal.domain.exception.PriceNotFoundDomainException;
@@ -23,17 +22,17 @@ public class VerifyProductPriceToApplyService implements IVerifyProductPriceToAp
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Price retrieveProductPrice(CriteriaProductPriceQuery query) throws PriceNotFoundDomainException {
-
-		List<Price> listPrices = retrievePricesPort.getListPrices(query.dateApplyingPrice().getDate(),
-																query.productId().getId(),
-																query.brandId().getId());
+	public Price retrieveProductPrice(CriteriaProductPriceQuery query) throws PriceNotFoundDomainException {	
 		
-		if(listPrices.isEmpty()) {
+		Optional<Price> price = retrievePricesPort.getPrice(query.dateApplyingPrice().getDate(),
+				query.productId().getId(),
+				query.brandId().getId());
+		
+		if(price.isEmpty()) {
 			throw new PriceNotFoundDomainException();
 		}
 		
-		return listPrices.stream().sorted(Comparator.reverseOrder()).findFirst().get();		
+		return price.get();
 	}
 
 }
