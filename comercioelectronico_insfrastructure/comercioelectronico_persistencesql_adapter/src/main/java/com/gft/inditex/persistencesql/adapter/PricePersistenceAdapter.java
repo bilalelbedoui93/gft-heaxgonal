@@ -1,7 +1,7 @@
 package com.gft.inditex.persistencesql.adapter;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 
 import com.gft.inditex.hexagonal.domain.configuration.PersistenceAdapter;
 import com.gft.inditex.hexagonal.domain.model.Price;
@@ -20,11 +20,15 @@ public class PricePersistenceAdapter implements IRetrievePricesPort{
 	}
 	
 	@Override
-	public List<Price> getListPrices(LocalDateTime dateApplyingPrice, Integer productId, Integer brandId) {
+	public Optional<Price> getPrice(LocalDateTime dateApplyingPrice, Integer productId, Integer brandId) {
 		
-		List<PriceJpaEntity> listPrices= pricesRepository.findPricesProductByDate(dateApplyingPrice, productId, brandId);
-	
-		return PriceMapper.mapListEntitiesToListModel(listPrices);
+		Optional<PriceJpaEntity> priceEntity = pricesRepository.findPriceProductByDate(dateApplyingPrice, productId, brandId);
+		
+		if(priceEntity.isPresent()) {
+			return Optional.of(PriceMapper.mapEntityToDomainModel(priceEntity.get()));
+		}
+		
+		return Optional.empty();
 	}
 
 }

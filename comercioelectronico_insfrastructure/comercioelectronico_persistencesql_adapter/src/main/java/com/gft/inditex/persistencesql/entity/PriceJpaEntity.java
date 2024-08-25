@@ -33,7 +33,7 @@ public class PriceJpaEntity {
 	private  Integer productId;
 	
 	@Column(name="PRIORITY")
-	private Integer Priority;
+	private Integer priority;
 	
 	@Column(name="PRICE")	
 	private Double price;
@@ -51,7 +51,7 @@ public class PriceJpaEntity {
 		this.endDate = endDate;
 		this.priceList = priceList;
 		this.productId = productId;
-		Priority = priority;
+		this.priority = priority;
 		this.price = price;
 		this.currency = currency;
 	}
@@ -97,11 +97,11 @@ public class PriceJpaEntity {
 	}
 
 	public Integer getPriority() {
-		return Priority;
+		return this.priority;
 	}
 
 	public void setPriority(Integer priority) {
-		Priority = priority;
+		this.priority = priority;
 	}
 
 	public Double getPrice() {
